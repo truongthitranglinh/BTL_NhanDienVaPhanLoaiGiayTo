@@ -1,7 +1,7 @@
 
-# 📑 Hệ thống Nhận dạng & Phân loại Giấy tờ bằng AI
+# Hệ thống Nhận dạng & Phân loại Giấy tờ bằng AI
 
-## 🔍 Giới thiệu
+## Giới thiệu
 Dự án này xây dựng hệ thống **nhận dạng và phân loại giấy tờ** (chứng minh thư, hộ chiếu, giấy phép lái xe, bằng cấp, hóa đơn, v.v) dựa trên:
 
 - **OCR (Nhận dạng ký tự quang học)**: trích xuất văn bản từ ảnh giấy tờ bằng **PaddleOCR** và **Tesseract**.  
@@ -9,14 +9,14 @@ Dự án này xây dựng hệ thống **nhận dạng và phân loại giấy t
 - **Logistic Regression**: phân loại văn bản giấy tờ dựa trên embedding PhoBERT.  
 - **Streamlit**: giao diện web trực quan để người dùng tải ảnh, xem kết quả OCR và loại giấy tờ dự đoán.
 
-## 🏗️ Kiến trúc hệ thống
+## Kiến trúc hệ thống
 1. **Tiền xử lý ảnh**: Chuyển xám, làm mờ, nhị phân hóa, sharpen bằng OpenCV.  
 2. **OCR**: Kết hợp **PaddleOCR** (chính) và **Tesseract** (bổ sung).  
 3. **Embedding**: Văn bản OCR được mã hóa thành vector 768 chiều bởi PhoBERT.  
 4. **Phân loại**: Logistic Regression dự đoán loại giấy tờ.  
 5. **Giao diện**: Streamlit hiển thị ảnh, văn bản OCR và kết quả phân loại.
 
-## 📂 Cấu trúc thư mục
+## Cấu trúc thư mục
 ```
 .
 ├── app.py               # Ứng dụng Streamlit (demo)
@@ -30,7 +30,7 @@ Dự án này xây dựng hệ thống **nhận dạng và phân loại giấy t
 ├── requirements.txt     # Thư viện cần cài
 ```
 
-## ⚙️ Cài đặt môi trường
+## Cài đặt môi trường
 ### 1. Clone repo & tạo môi trường
 ```bash
 git clone <repo_url>
@@ -66,7 +66,7 @@ paddleocr
   sudo apt install tesseract-ocr
   ```
 
-## 📘 Huấn luyện mô hình
+## Huấn luyện mô hình
 1. Chuẩn bị dữ liệu theo cấu trúc:
    ```
    dataset/
@@ -83,7 +83,7 @@ paddleocr
      - `doc_classifier.pkl`: mô hình Logistic Regression đã huấn luyện.
      - `labels.json`: danh sách nhãn tương ứng.
 
-## 🚀 Chạy ứng dụng
+## Chạy ứng dụng
 ```bash
 streamlit run app.py
 ```
@@ -95,17 +95,13 @@ streamlit run app.py
   - Sinh vector embedding bằng PhoBERT.  
   - Dự đoán loại giấy tờ và hiển thị kết quả.  
 
-## 📊 Ví dụ kết quả
+## Ví dụ kết quả
 - **Ảnh gốc & tiền xử lý**: hiển thị song song.  
 - **Văn bản OCR**: nội dung trích xuất từ ảnh.  
 - **Loại giấy tờ dự đoán**: Ví dụ: *Căn cước công dân*.
 
-## 🔮 Hướng phát triển
+## Hướng phát triển
 - Bổ sung thêm nhiều loại giấy tờ (bằng cấp, hóa đơn, hợp đồng...).  
 - Tinh chỉnh PhoBERT để tăng độ chính xác.  
 - Tích hợp API REST để triển khai thực tế.  
 - Hỗ trợ nhiều ngôn ngữ ngoài tiếng Việt.  
-
-## 👨‍💻 Tác giả
-- Người phát triển: **[Tên anh]**  
-- Công nghệ sử dụng: PyTorch, Hugging Face, PaddleOCR, Streamlit  
